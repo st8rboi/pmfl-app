@@ -10,7 +10,7 @@ export const Match = () => {
     return (
         <View style={styles.view}>
             <Button style={styles.button} title="Ближайшие" onPress={changeColor} />
-            <Button title="Прошедшие" onPress={changeColor} />
+            <Button color="#000000" title="Прошедшие" onPress={changeColor} />
         </View >
     )
 }
