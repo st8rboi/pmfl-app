@@ -3,7 +3,6 @@ import { View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-
 import { Match } from './screens/MatchScreen'
 import { News } from './screens/NewsScreen'
 import { Stat } from './screens/StatScreen'
@@ -34,28 +33,32 @@ const Tabs = () => {
                     <View>
                         <Ionicons name="football" size={35} color="black" paddingTop={4} />
                     </View>
-                )
+                ),
+                headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Новости" component={News} options={{
                 tabBarIcon: ({ focused }) => (
                     <View>
                         <Entypo name="news" size={28} color="black" paddingTop={4} />
                     </View>
-                )
+                ),
+                headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Статистика" component={Stat} options={{
                 tabBarIcon: ({ focused }) => (
                     <View>
                         <Ionicons name="stats-chart" size={27} color="black" paddingTop={4} />
                     </View>
-                )
+                ),
+                headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Информация" component={Info} options={{
                 tabBarIcon: ({ focused }) => (
                     <View>
                         <AntDesign name="infocirlce" size={24} color="black" paddingTop={4} />
                     </View>
-                )
+                ),
+                headerTitleAlign: 'center',
             }} />
         </Tab.Navigator>
 
