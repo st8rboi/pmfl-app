@@ -1,3 +1,4 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
@@ -7,6 +8,7 @@ import { Match } from './screens/MatchScreen'
 import { News } from './screens/NewsScreen'
 import { Stat } from './screens/StatScreen'
 import { Info } from './screens/InfoScreen'
+
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +31,7 @@ const Tabs = () => {
             }
         }}>
             <Tab.Screen name="Mатч-центр" component={Match} options={{
-                tabBarIcon: ({ focused }) => (
+                tabBarIcon: () => (
                     <View>
                         <Ionicons name="football" size={35} color="black" paddingTop={4} />
                     </View>
@@ -37,7 +39,7 @@ const Tabs = () => {
                 headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Новости" component={News} options={{
-                tabBarIcon: ({ focused }) => (
+                tabBarIcon: () => (
                     <View>
                         <Entypo name="news" size={28} color="black" paddingTop={4} />
                     </View>
@@ -45,7 +47,7 @@ const Tabs = () => {
                 headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Статистика" component={Stat} options={{
-                tabBarIcon: ({ focused }) => (
+                tabBarIcon: () => (
                     <View>
                         <Ionicons name="stats-chart" size={27} color="black" paddingTop={4} />
                     </View>
@@ -53,7 +55,7 @@ const Tabs = () => {
                 headerTitleAlign: 'center',
             }} />
             <Tab.Screen name="Информация" component={Info} options={{
-                tabBarIcon: ({ focused }) => (
+                tabBarIcon: () => (
                     <View>
                         <AntDesign name="infocirlce" size={24} color="black" paddingTop={4} />
                     </View>

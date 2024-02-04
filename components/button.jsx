@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Button } from 'react-native';
 import styles from '../styles';
 
-function NewButton(props) {
+
+function TopButton(props) {
+
     return (
         <View style={styles.button}>
             <Button
                 title={props.title}
-                onPress={() => console.log('Button pressed')}
+                onPress={props.onPress}
+                color={props.color}
             />
         </View>
     );
 }
 
 
-export default NewButton;
+export default TopButton;
