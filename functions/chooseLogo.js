@@ -12,6 +12,12 @@ export const chooseLogo = (team_name) => {
         case 'DripPlug':
             team_logo = require('../assets/DripPlug.png')
             break;
+        case 'LOM':
+            team_logo = require('../assets/Lom.png')
+            break;
+        case 'TB':
+            team_logo = require('../assets/TotalBlack.png')
+            break;
         default:
             break;
     }

@@ -28,7 +28,8 @@ const Tabs = () => {
                     width: 10,
                     height: 10,
                 }
-            }
+            },
+
         }}>
             <Tab.Screen name="Mатч-центр" component={Match} options={{
                 tabBarIcon: () => (
@@ -37,6 +38,7 @@ const Tabs = () => {
                     </View>
                 ),
                 headerTitleAlign: 'center',
+
             }} />
             <Tab.Screen name="Новости" component={News} options={{
                 tabBarIcon: () => (

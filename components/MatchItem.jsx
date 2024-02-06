@@ -1,15 +1,27 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { chooseLogo } from '../functions/chooseLogo'
+import styles from '../Styles';
 
-export const MatchItem = ({ team_home, team_away, score_home, score_away }) => {
-    const logo_home = chooseLogo(team_home)
-    const logo_away = chooseLogo(team_away)
+function MatchItem({ team_home, team_away, score_home, score_away, data }) {
     return (
-        <View>
-            <Image source={logo_home} style={{ width: 40, height: 40 }} />
-            <Image source={logo_away} style={{ width: 40, height: 40 }} />
-            <Text>{team_home} {score_home}:{score_away} {team_away}</Text>
+        <View style={styles.container}>
+            <View style={styles.card}>
+                <Image source={chooseLogo(team_home)} style={styles.image} />
+                <Text style={styles.team}>{team_home}</Text>
+                <Text style={styles.score}>{score_home}</Text>
+                <Text style={styles.vs}>vs</Text>
+                <Text style={styles.score}>{score_away}</Text>
+                <Text style={styles.team}>{team_away}</Text>
+                <Image source={chooseLogo(team_away)} style={styles.image} />
+            </View>
+            <Text style={styles.datatext}>{data}</Text>
         </View>
-    )
-};
+
+
+
+    );
+}
+
+
+export default MatchItem;
