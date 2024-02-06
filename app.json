@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "pmfl-app",
-    "slug": "pmfl-app",
+    "slug": "pmfl",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.monkeyreel.pmfl"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "210fe403-3667-4602-9321-50475595c1ba"
+      }
+    },
+    "owner": "monkeyreel"
   }
 }
