@@ -5,8 +5,8 @@ import styles from '../Styles';
 
 function MatchItem({ team_home, team_away, score_home, score_away, data }) {
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
+        <View style={styles.containerMatch}>
+            <View style={styles.cardMatch}>
                 <Image source={chooseLogo(team_home)} style={styles.image} />
                 <Text style={styles.team}>{team_home}</Text>
                 <Text style={styles.score}>{score_home}</Text>
@@ -15,7 +15,7 @@ function MatchItem({ team_home, team_away, score_home, score_away, data }) {
                 <Text style={styles.team}>{team_away}</Text>
                 <Image source={chooseLogo(team_away)} style={styles.image} />
             </View>
-            <Text style={styles.datatext}>{data}</Text>
+            <Text style={styles.datatextMatch}>{data}</Text>
         </View>
 
 

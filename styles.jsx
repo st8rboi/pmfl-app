@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
     },
-    container: {
+    containerMatch: {
         backgroundColor: '#FFF',
         marginLeft: 10,
         marginRight: 10,
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         padding: 15,
     },
-    card: {
+    cardMatch: {
         marginLeft: 10,
         marginRight: 10,
         marginTop: 15,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center'
     },
-    datatext: {
+    datatextMatch: {
         textAlign: 'center'
     }
 })

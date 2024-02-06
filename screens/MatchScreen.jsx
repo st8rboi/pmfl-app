@@ -6,7 +6,6 @@ import MatchItem from '../components/MatchItem';
 export const Match = () => {
     return (
         <View>
-
             <FlatList
                 data={matches}
                 renderItem={({ item }) => (
