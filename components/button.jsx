@@ -6,7 +6,12 @@ import styles from '../Styles';
 function TopButton(props) {
 
     return (
-        <View style={styles.button}>
+        <View style={{
+            borderRadius: 15,
+            overflow: 'hidden',
+            marginRight: 5,
+            marginLeft: 10,
+        }}>
             <Button
                 title={props.title}
                 onPress={props.onPress}

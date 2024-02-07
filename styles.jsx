@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    button: {
-        borderRadius: 15,
-        overflow: 'hidden',
+    buttonbox: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingTop: 10
     },
 
     image: {
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         marginLeft: 10,
         marginRight: 10,
-        marginTop: 15,
+        marginTop: 10,
         flexDirection: "column",
         borderRadius: 12,
         padding: 15,

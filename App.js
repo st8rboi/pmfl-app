@@ -1,21 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native'
 import Tabs from './Tab'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { View } from 'react-native';
 
 
-
-const Tab = createBottomTabNavigator();
-
-const App = () => {
+const App = () => { 
   return (
     <NavigationContainer>
       <Tabs />
     </NavigationContainer>
-
-
-
-
   )
 }
 

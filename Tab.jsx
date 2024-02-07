@@ -4,11 +4,10 @@ import { View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { Match } from './screens/MatchScreen'
 import { News } from './screens/NewsScreen'
 import { Stat } from './screens/StatScreen'
 import { Info } from './screens/InfoScreen'
-
+import { Stacks } from "./Stack";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +30,7 @@ const Tabs = () => {
             },
 
         }}>
-            <Tab.Screen name="Mатч-центр" component={Match} options={{
+            <Tab.Screen name="Mатч-центр" component={Stacks} options={{
                 tabBarIcon: () => (
                     <View>
                         <Ionicons name="football" size={35} color="black" paddingTop={4} />
