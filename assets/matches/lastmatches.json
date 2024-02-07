@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "team_home": "Joga",
+        "team_away": "Banzai",
+        "score_home": "3",
+        "score_away": "2",
+        "data": "05/02/24"
+    },
+    {
+        "id": 1,
+        "team_home": "Lasso",
+        "team_away": "LOM",
+        "score_home": "0",
+        "score_away": "5",
+        "data": "05/02/24"
+    },
+    {
+        "id": 2,
+        "team_home": "Inside",
+        "team_away": "AFK",
+        "score_home": "4",
+        "score_away": "3",
+        "data": "05/02/24"
+    },
+    {
+        "id": 3,
+        "team_home": "Banzai",
+        "team_away": "MK",
+        "score_home": "3",
+        "score_away": "2",
+        "data": "05/02/24"
+    },
+    {
+        "id": 4,
+        "team_home": "LOM",
+        "team_away": "Crazed",
+        "score_home": "0",
+        "score_away": "5",
+        "data": "05/02/24"
+    },
+    {
+        "id": 5,
+        "team_home": "TB",
+        "team_away": "AFK",
+        "score_home": "4",
+        "score_away": "3",
+        "data": "05/02/24"
+    }
+]

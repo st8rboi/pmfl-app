@@ -13,7 +13,7 @@ const ArticleItem = ({ title, lead, img_url }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#171718',
         padding: 16,
         borderRadius: 8,
         elevation: 2,
@@ -28,10 +28,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 8
+        marginBottom: 8,
+        color: 'white'
     },
     lead: {
-        fontSize: 16
+        fontSize: 16,
+        color: 'white'
     }
 });
 

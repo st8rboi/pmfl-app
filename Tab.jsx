@@ -8,8 +8,10 @@ import { News } from './screens/NewsScreen'
 import { Stat } from './screens/StatScreen'
 import { Info } from './screens/InfoScreen'
 import { Stacks } from "./Stack";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
+
 
 const Tabs = () => {
     return (
@@ -17,51 +19,63 @@ const Tabs = () => {
             tabBarStyle: {
                 position: "absolute",
                 paddingBottom: 6,
-                bottom: 30,
-                marginHorizontal: 20,
                 height: 60,
                 borderRadius: 12,
-                shadowColor: '#000000',
+                shadowColor: '#4b0e89',
                 shadowOpacity: 0.05,
                 shadowOffset: {
                     width: 10,
                     height: 10,
-                }
+                },
+                backgroundColor: 'black',
             },
 
         }}>
             <Tab.Screen name="Mатч-центр" component={Stacks} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="football" size={35} color="black" paddingTop={4} />
+                        <Ionicons name="football-outline" size={29}  color='white'/>
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                tabBarLabelStyle: {
+                    color: 'white',
+                },
+
 
             }} />
             <Tab.Screen name="Новости" component={News} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Entypo name="news" size={28} color="black" paddingTop={4} />
+                        <MaterialCommunityIcons name="newspaper-variant-outline" size={28} color="white"/>
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                                tabBarLabelStyle: {
+                    color: 'white'
+                }
             }} />
             <Tab.Screen name="Статистика" component={Stat} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="stats-chart" size={27} color="black" paddingTop={4} />
+                        <Ionicons name="stats-chart" size={25} color="white" paddingTop={4} />
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                                tabBarLabelStyle: {
+                    color: 'white'
+                }
             }} />
             <Tab.Screen name="Информация" component={Info} options={{
                 tabBarIcon: () => (
                     <View>
-                        <AntDesign name="infocirlce" size={24} color="black" paddingTop={4} />
+                        <AntDesign name="infocirlce" size={22} color="white" paddingTop={4} />
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                                tabBarLabelStyle: {
+                    color: 'white'
+                }
             }} />
         </Tab.Navigator>
 

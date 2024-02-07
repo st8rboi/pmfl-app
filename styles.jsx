@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         height: 40,
     },
     containerMatch: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#171717',
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
@@ -31,17 +31,21 @@ const styles = StyleSheet.create({
     team: {
         fontSize: 18,
         fontWeight: 'bold',
+        color: 'white'
     },
     score: {
         fontSize: 24,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     },
     vs: {
         fontSize: 18,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     },
     datatextMatch: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     }
 })
 

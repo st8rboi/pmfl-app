@@ -18,6 +18,18 @@ export const chooseLogo = (team_name) => {
         case 'TB':
             team_logo = require('../assets/TotalBlack.png')
             break;
+        case 'Joga':
+            team_logo = require('../assets/Joga.png')
+            break;
+        case 'Lasso':
+            team_logo = require('../assets/Lasso.png')
+            break;
+        case 'MK':
+            team_logo = require('../assets/MK.png')
+            break;
+        case 'Inside':
+            team_logo = require('../assets/Inside.png')
+            break;
         default:
             break;
     }

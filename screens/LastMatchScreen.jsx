@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, FlatList , Text} from 'react-native';
-import matches from '../assets/matches/matches.json'
+import matches from '../assets/matches/lastmatches.json'
 import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
@@ -13,7 +13,7 @@ export const LastMatch = ({route}) => {
         <View>
             <View style={styles.buttonbox}>
                 <TopButton title='Ближайшие' onPress={ () => navigation.navigate('ближайшие') }  color='black'/>
-                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} />
+                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='purple'/>
             </View>
             <FlatList
                 data={matches}

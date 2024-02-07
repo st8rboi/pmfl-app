@@ -12,7 +12,7 @@ export const Match = () => {
     return (
         <View>   
             <View style={styles.buttonbox}>
-                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')}/>
+                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='purple'/>
                 <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='black'/>
             </View>
             <FlatList
