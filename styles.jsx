@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     team: {
         fontSize: 18,
         color: 'white',
-        fontWeight: 'bpld'
+        fontWeight: 'bold'
     },
     score: {
         fontSize: 24,

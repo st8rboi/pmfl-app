@@ -2,7 +2,6 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { News } from './screens/NewsScreen'
 import { Stat } from './screens/StatScreen'
