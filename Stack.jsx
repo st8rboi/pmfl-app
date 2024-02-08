@@ -11,7 +11,9 @@ export const Stacks = () => {
         <Stack.Navigator>
             <Stack.Screen name="ближайшие" component={Match} options={{ headerShown: false }} />
             <Stack.Screen name="прошлые" component={LastMatch} options={{ headerShown: false }}/>
-            <Stack.Screen name="thismatch" component={ThisMatch} />
+            <Stack.Screen name="thismatch" component={ThisMatch} options={{
+                title: 'Назад'
+            }}/>
 
         </Stack.Navigator>
 

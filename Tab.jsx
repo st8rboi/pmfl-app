@@ -18,7 +18,7 @@ const Tabs = () => {
         <Tab.Navigator screenOptions={{
             tabBarStyle: {
                 position: "absolute",
-                paddingBottom: 6,
+                paddingBottom: 7,
                 height: 60,
                 borderRadius: 12,
                 shadowColor: '#4b0e89',
@@ -27,17 +27,20 @@ const Tabs = () => {
                     width: 10,
                     height: 10,
                 },
-                backgroundColor: 'black',
+                backgroundColor: '#171717',
             },
 
         }}>
             <Tab.Screen name="Mатч-центр" component={Stacks} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="football-outline" size={29}  color='white'/>
+                        <Ionicons name="football-outline" size={30} color='white' paddingTop={3} />
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                headerBackgroundContainerStyle: {
+                    backgroundColor: '#171717'
+                },
                 tabBarLabelStyle: {
                     color: 'white',
                 },
@@ -47,7 +50,7 @@ const Tabs = () => {
             <Tab.Screen name="Новости" component={News} options={{
                 tabBarIcon: () => (
                     <View>
-                        <MaterialCommunityIcons name="newspaper-variant-outline" size={28} color="white"/>
+                        <MaterialCommunityIcons name="newspaper-variant-outline" size={28} color="white" paddingTop={2}/>
                     </View>
                 ),
                 headerTitleAlign: 'center',
@@ -69,7 +72,7 @@ const Tabs = () => {
             <Tab.Screen name="Информация" component={Info} options={{
                 tabBarIcon: () => (
                     <View>
-                        <AntDesign name="infocirlce" size={22} color="white" paddingTop={4} />
+                        <AntDesign name="infocirlce" size={22} color="white" paddingTop={7} />
                     </View>
                 ),
                 headerTitleAlign: 'center',

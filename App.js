@@ -1,6 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native'
 import Tabs from './Tab'
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { StatusBar } from 'expo-status-bar';
+
+
 
 const theme = {
   ...DefaultTheme,
@@ -13,12 +16,16 @@ const theme = {
 };
 
 const App = () => { 
+
   return (
     <PaperProvider theme={theme}>
     <NavigationContainer theme={theme}>
       <Tabs />
     </NavigationContainer>
+      <StatusBar style='light'/>
     </PaperProvider>
+
+
   )
 }
 

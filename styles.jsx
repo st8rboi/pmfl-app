@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     },
     team: {
         fontSize: 18,
-        fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        fontWeight: 'bpld'
     },
     score: {
         fontSize: 24,
@@ -45,7 +45,13 @@ const styles = StyleSheet.create({
     },
     datatextMatch: {
         textAlign: 'center',
-        color: 'white'
+        color: 'white',
+        opacity: 0.45,
+    },
+    datatextMatchLive: {
+        textAlign: 'center',
+        color: 'red',
+        fontWeight: 'bold'
     }
 })
 

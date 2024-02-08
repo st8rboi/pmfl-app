@@ -3,25 +3,25 @@
         "id": 0,
         "team_home": "Banzai",
         "team_away": "AFK",
-        "score_home": "3",
-        "score_away": "2",
-        "data": "live"
+        "score_home": "0",
+        "score_away": "0",
+        "data": "• LIVE"
     },
     {
         "id": 1,
         "team_home": "LOM",
         "team_away": "Crazed",
         "score_home": "0",
-        "score_away": "5",
-        "data": "05/02/24"
+        "score_away": "0",
+        "data": "19:00"
     },
     {
         "id": 2,
         "team_home": "Inside",
         "team_away": "DripPlug",
-        "score_home": "4",
-        "score_away": "3",
-        "data": "05/02/24"
+        "score_home": "0",
+        "score_away": "0",
+        "data": "19:40"
     }
 ]
  
