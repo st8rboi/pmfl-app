@@ -28,23 +28,17 @@ const Tabs = () => {
                 },
                 backgroundColor: '#171717',
             },
-
         }}>
-            <Tab.Screen name="Mатч-центр" component={Stacks} options={{
+            <Tab.Screen name="Матч-центр" component={Stacks} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="football-outline" size={30} color='white' paddingTop={3} />
+                        <Ionicons name="football-outline" size={30} color="white" paddingTop={5} />
                     </View>
                 ),
                 headerTitleAlign: 'center',
-                headerBackgroundContainerStyle: {
-                    backgroundColor: '#171717'
-                },
                 tabBarLabelStyle: {
-                    color: 'white',
-                },
-
-
+                    color: 'white'
+                }
             }} />
             <Tab.Screen name="Новости" component={News} options={{
                 tabBarIcon: () => (
@@ -53,7 +47,7 @@ const Tabs = () => {
                     </View>
                 ),
                 headerTitleAlign: 'center',
-                                tabBarLabelStyle: {
+                tabBarLabelStyle: {
                     color: 'white'
                 }
             }} />
@@ -64,7 +58,7 @@ const Tabs = () => {
                     </View>
                 ),
                 headerTitleAlign: 'center',
-                                tabBarLabelStyle: {
+                tabBarLabelStyle: {
                     color: 'white'
                 }
             }} />
@@ -75,7 +69,7 @@ const Tabs = () => {
                     </View>
                 ),
                 headerTitleAlign: 'center',
-                                tabBarLabelStyle: {
+                tabBarLabelStyle: {
                     color: 'white'
                 }
             }} />
