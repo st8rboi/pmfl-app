@@ -12,13 +12,16 @@ export const Match = () => {
     return (
         <View>   
             <View style={styles.buttonbox}>
-                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='purple'/>
+                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='green'/>
                 <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='black'/>
             </View>
             <FlatList
                 data={matches}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', {id: item.id}) }>
+                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
+                        id: item.id,
+                        screen: "matches",
+                    })}>
                         <MatchItem
                             team_home={item.team_home}
                             team_away={item.team_away}

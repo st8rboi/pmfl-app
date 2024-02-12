@@ -26,22 +26,20 @@ const styles = StyleSheet.create({
         marginTop: 15,
         flexDirection: "row",
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
+
     },
     team: {
         fontSize: 18,
         color: 'white',
         fontWeight: 'bold'
     },
-    score: {
-        fontSize: 24,
-        textAlign: 'center',
-        color: 'white'
-    },
-    vs: {
+    tablo: {
+        color: 'green',
+        justifyContent: 'center',
+        alignItems: 'center',
         fontSize: 18,
-        textAlign: 'center',
-        color: 'white'
+        fontWeight: 'bold'
     },
     datatextMatch: {
         textAlign: 'center',

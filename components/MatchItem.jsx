@@ -9,9 +9,9 @@ function MatchItem({ team_home, team_away, score_home, score_away, data }) {
             <View style={styles.cardMatch}>
                 <Image source={chooseLogo(team_home)} style={styles.image} />
                 <Text style={styles.team}>{team_home}</Text>
-                <Text style={styles.score}>{score_home}</Text>
-                <Text style={styles.vs}>:</Text>
-                <Text style={styles.score}>{score_away}</Text>
+                <View style={styles.tablo}>
+                    <Text style={styles.tablo}>{score_home} : {score_away}</Text>
+                </View>
                 <Text style={styles.team}>{team_away}</Text>
                 <Image source={chooseLogo(team_away)} style={styles.image} />
             </View>

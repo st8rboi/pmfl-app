@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Match } from "./screens/MatchScreen";
-import { ThisMatch } from "./screens/ThisMatchScreen"
+import { ThisMatch }  from "./screens/ThisMatchScreen"
 import { LastMatch } from "./screens/LastMatchScreen";
 
 const Stack = createStackNavigator()    

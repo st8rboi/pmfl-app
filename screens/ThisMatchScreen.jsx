@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import matches from '../assets/matches/matches.json'
+import lastmatches from '../assets/matches/lastmatches.json'
+import MatchItem from '../components/MatchItem'
 
 export const ThisMatch = ({ route }) => {
-  const thisMatch = matches[route.params.id]
+  const thisMatch =
+    (route.params.screen == 'matches')?
+    matches[route.params.id]:lastmatches[route.params.id]
+    
     return (
-      <View style={styles.container}>
-        <Text style={styles.headerText}>Исход матча</Text>
-        <View style={styles.matchResultContainer}>
-          <Text style={styles.matchResultText}>
-            {thisMatch.team_home} {thisMatch.score_home} : {thisMatch.score_away} {thisMatch.team_away}</Text>
-        </View>
-        <View style={styles.goalsContainer}>
+      <View>
+        <MatchItem
+          team_home={thisMatch.team_home}
+          team_away={thisMatch.team_away}
+          score_home={thisMatch.score_home}
+          score_away={thisMatch.score_away}
+          data={thisMatch.data}/>
           <Text style={styles.goalsHeaderText}>Авторы голов:</Text>
           <Text>Гол 1: Игрок A</Text>
           <Text>Гол 2: Игрок B</Text>
           <Text>Гол 3: Игрок A</Text>
           <Text>Гол 4: Игрок B</Text>
         </View>
-  </View>
     )
 }
 
@@ -32,6 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: 'white',
   },
   matchResultContainer: {
     backgroundColor: 'lightgrey',

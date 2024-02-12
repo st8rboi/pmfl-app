@@ -13,12 +13,16 @@ export const LastMatch = ({route}) => {
         <View>
             <View style={styles.buttonbox}>
                 <TopButton title='Ближайшие' onPress={ () => navigation.navigate('ближайшие') }  color='black'/>
-                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='purple'/>
+                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='green'/>
+
             </View>
             <FlatList
                 data={matches}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', { id: item.id }) }>
+                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
+                        id: item.id,
+                        screen: "lastmatches",
+                    })}>
                         <MatchItem
                             team_home={item.team_home}
                             team_away={item.team_away}
