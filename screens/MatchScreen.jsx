@@ -1,18 +1,39 @@
 import React from 'react';
 import { View, TouchableOpacity, FlatList, Button } from 'react-native';
-import matches from '../assets/matches/matches.json'
 import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
 import styles from '../Styles';
+import axios from 'axios';
 
 export const Match = () => {
-    
+
+    const [matches, setMatches] = React.useState();
+    React.useEffect(() => {
+        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/matches')
+            .then(({ data }) => {
+                setMatches(data);
+            }).catch((err) => {
+                console.log(err);
+                alert('Ошибка при получении матчей')
+            })
+    }, [])
+
+    const [refreshing, setRefreshing] = React.useState(false);
+    const handleRefresh = () => {
+        setRefreshing(true);
+        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/articles')
+            .then(({ data }) => {
+                setMatches(data);
+            })
+        setRefreshing(false)
+        }   
+
     const navigation = useNavigation();
     return (
         <View>   
             <View style={styles.buttonbox}>
-                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='green'/>
+                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='green' />
                 <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='black'/>
             </View>
             <FlatList
@@ -20,7 +41,7 @@ export const Match = () => {
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
                         id: item.id,
-                        screen: "matches",
+                        screen: matches,
                     })}>
                         <MatchItem
                             team_home={item.team_home}
@@ -31,6 +52,8 @@ export const Match = () => {
                         />
                     </TouchableOpacity>
                 )}
+                refreshing={refreshing}
+                onRefresh={handleRefresh}
             />
             </View>
             

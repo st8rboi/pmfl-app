@@ -4,8 +4,13 @@
         "team_home": "Banzai",
         "team_away": "AFK",
         "score_home": "0",
+        "authors_home": {
+            "one": "Радостев",
+            "two": "Баяндин"
+        },
         "score_away": "0",
         "data": "• LIVE"
+        
     },
     {
         "id": 1,

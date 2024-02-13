@@ -1,13 +1,32 @@
 import React from 'react';
 import { View, TouchableOpacity, FlatList , Text} from 'react-native';
-import matches from '../assets/matches/lastmatches.json'
 import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
 import styles from '../Styles';
+import axios from 'axios';
 
-export const LastMatch = ({route}) => {
+export const LastMatch = () => {
+    const [lastmatches, setLastMatches] = React.useState();
+    React.useEffect(() => {
+        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches')
+            .then(({ data }) => {
+                setLastMatches(data);
+            }).catch((err) => {
+                console.log(err);
+                alert('Ошибка при получении матчей')
+            })
+    }, [])
 
+    const [refreshing, setRefreshing] = React.useState(false);
+    const handleRefresh = () => {
+        setRefreshing(true);
+        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches')
+            .then(({ data }) => {
+                setLastMatches(data);
+            })
+        setRefreshing(false)
+        }  
     const navigation = useNavigation();
     return (
         <View>
@@ -17,11 +36,11 @@ export const LastMatch = ({route}) => {
 
             </View>
             <FlatList
-                data={matches}
+                data={lastmatches}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
                         id: item.id,
-                        screen: "lastmatches",
+                        screen: lastmatches,
                     })}>
                         <MatchItem
                             team_home={item.team_home}
@@ -32,6 +51,8 @@ export const LastMatch = ({route}) => {
                         />
                     </TouchableOpacity>
                 )}
+                refreshing={refreshing}
+                onRefresh={handleRefresh}
             />
         </View>
     );

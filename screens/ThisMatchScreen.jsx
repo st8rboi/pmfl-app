@@ -3,25 +3,20 @@ import { View, Text, StyleSheet } from 'react-native';
 import matches from '../assets/matches/matches.json'
 import lastmatches from '../assets/matches/lastmatches.json'
 import MatchItem from '../components/MatchItem'
+import { FlatList } from 'react-native-gesture-handler';
+import axios from 'axios';
 
 export const ThisMatch = ({ route }) => {
-  const thisMatch =
-    (route.params.screen == 'matches')?
-    matches[route.params.id]:lastmatches[route.params.id]
-    
+    const thisMatch = route.params.screen[route.params.id]
     return (
-      <View>
+      <View> 
         <MatchItem
           team_home={thisMatch.team_home}
           team_away={thisMatch.team_away}
           score_home={thisMatch.score_home}
           score_away={thisMatch.score_away}
-          data={thisMatch.data}/>
-          <Text style={styles.goalsHeaderText}>Авторы голов:</Text>
-          <Text>Гол 1: Игрок A</Text>
-          <Text>Гол 2: Игрок B</Text>
-          <Text>Гол 3: Игрок A</Text>
-          <Text>Гол 4: Игрок B</Text>
+          data={thisMatch.data} />
+        
         </View>
     )
 }
