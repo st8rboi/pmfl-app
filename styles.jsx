@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         height: 40,
     },
     containerMatch: {
-        backgroundColor: '#171717',
+        backgroundColor: '#171742',
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     tablo: {
-        color: 'green',
+        color: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 18,

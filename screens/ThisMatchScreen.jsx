@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import matches from '../assets/matches/matches.json'
-import lastmatches from '../assets/matches/lastmatches.json'
+import React from 'react';
+import { View,  StyleSheet } from 'react-native';
 import MatchItem from '../components/MatchItem'
-import { FlatList } from 'react-native-gesture-handler';
-import axios from 'axios';
+
+
 
 export const ThisMatch = ({ route }) => {
     const thisMatch = route.params.screen[route.params.id]
@@ -16,7 +14,6 @@ export const ThisMatch = ({ route }) => {
           score_home={thisMatch.score_home}
           score_away={thisMatch.score_away}
           data={thisMatch.data} />
-        
         </View>
     )
 }

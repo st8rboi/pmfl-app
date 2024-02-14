@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, FlatList, Button } from 'react-native';
+import { View, TouchableOpacity, FlatList, Button, ImageBackground } from 'react-native';
 import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
@@ -7,7 +7,6 @@ import styles from '../Styles';
 import axios from 'axios';
 
 export const Match = () => {
-
     const [matches, setMatches] = React.useState();
     React.useEffect(() => {
         axios('https://65ba3f9fb4d53c0665526458.mockapi.io/matches')
@@ -31,9 +30,9 @@ export const Match = () => {
 
     const navigation = useNavigation();
     return (
-        <View>   
+        <View>  
             <View style={styles.buttonbox}>
-                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='green' />
+                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='#171742' />
                 <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='black'/>
             </View>
             <FlatList
@@ -54,7 +53,7 @@ export const Match = () => {
                 )}
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
-            />
+                />
             </View>
             
     );

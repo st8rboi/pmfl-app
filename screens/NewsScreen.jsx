@@ -1,12 +1,11 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, ImageBackground } from "react-native";
 import ArticleItem from "../components/Article";
 import { FlatList, TouchableOpacity } from "react-native";
 import news from '../assets/news/arctiles.json'
 
 export const News = () => {
     return (
-        <View>
             <FlatList
                 data={news}
                 renderItem={({ item }) => (
@@ -21,6 +20,5 @@ export const News = () => {
                     </TouchableOpacity>
                 )}
             />
-        </View>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View } from "react-native";
+import { ImageBackground, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { News } from './screens/NewsScreen'
@@ -26,7 +26,7 @@ const Tabs = () => {
                     width: 10,
                     height: 10,
                 },
-                backgroundColor: '#171717',
+                backgroundColor: '#171742',
             },
         }}>
             <Tab.Screen name="Матч-центр" component={Stacks} options={{
@@ -74,7 +74,6 @@ const Tabs = () => {
                 }
             }} />
         </Tab.Navigator>
-
     )
 }
 

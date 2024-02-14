@@ -32,7 +32,7 @@ export const LastMatch = () => {
         <View>
             <View style={styles.buttonbox}>
                 <TopButton title='Ближайшие' onPress={ () => navigation.navigate('ближайшие') }  color='black'/>
-                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='green'/>
+                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='#171742'/>
 
             </View>
             <FlatList

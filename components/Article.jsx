@@ -13,7 +13,7 @@ const ArticleItem = ({ title, lead, img_url }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#171718',
+        backgroundColor: '#171742',
         padding: 16,
         borderRadius: 8,
         elevation: 2,
