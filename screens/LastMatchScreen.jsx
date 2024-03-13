@@ -18,15 +18,6 @@ export const LastMatch = () => {
             })
     }, [])
 
-    const [refreshing, setRefreshing] = React.useState(false);
-    const handleRefresh = () => {
-        setRefreshing(true);
-        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches')
-            .then(({ data }) => {
-                setLastMatches(data);
-            })
-        setRefreshing(false)
-        }  
     const navigation = useNavigation();
     return (
         <View>
@@ -51,8 +42,6 @@ export const LastMatch = () => {
                         />
                     </TouchableOpacity>
                 )}
-                refreshing={refreshing}
-                onRefresh={handleRefresh}
             />
         </View>
     );

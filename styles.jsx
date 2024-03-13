@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'red',
         fontWeight: 'bold'
+    },
+    video: {
+        flex: 1,
     }
 })
 

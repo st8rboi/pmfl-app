@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, FlatList, Button, ImageBackground } from 'react-native';
+import { View, TouchableOpacity, FlatList } from 'react-native';
 import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
@@ -21,10 +21,9 @@ export const Match = () => {
     const [refreshing, setRefreshing] = React.useState(false);
     const handleRefresh = () => {
         setRefreshing(true);
-        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/articles')
-            .then(({ data }) => {
-                setMatches(data);
-            })
+        () => {
+                setMatches('https://65ba3f9fb4d53c0665526458.mockapi.io/matches');
+            }
         setRefreshing(false)
         }   
 
