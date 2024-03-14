@@ -8,22 +8,20 @@ import axios from 'axios';
 
 export const Match = () => {
     const [matches, setMatches] = React.useState();
+    const fetchData = async (limit = 10) => {
+        const response = await fetch(
+            'https://65ba3f9fb4d53c0665526458.mockapi.io/matches'
+        );
+        const data = await response.json();
+        setMatches(data)
+    }
     React.useEffect(() => {
-        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/matches')
-            .then(({ data }) => {
-                setMatches(data);
-            }).catch((err) => {
-                console.log(err);
-                alert('Ошибка при получении матчей')
-            })
+        fetchData();
     }, [])
-
     const [refreshing, setRefreshing] = React.useState(false);
     const handleRefresh = () => {
         setRefreshing(true);
-        () => {
-                setMatches('https://65ba3f9fb4d53c0665526458.mockapi.io/matches');
-            }
+        fetchData(10);
         setRefreshing(false)
         }   
 

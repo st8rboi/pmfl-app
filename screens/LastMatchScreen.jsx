@@ -8,15 +8,22 @@ import axios from 'axios';
 
 export const LastMatch = () => {
     const [lastmatches, setLastMatches] = React.useState();
+    const fetchData = async (limit = 10) => {
+        const response = await fetch(
+            'https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches'
+        );
+        const data = await response.json();
+        setLastMatches(data)
+    }
     React.useEffect(() => {
-        axios('https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches')
-            .then(({ data }) => {
-                setLastMatches(data);
-            }).catch((err) => {
-                console.log(err);
-                alert('Ошибка при получении матчей')
-            })
+        fetchData();
     }, [])
+    const [refreshing, setRefreshing] = React.useState(false);
+    const handleRefresh = () => {
+        setRefreshing(true);
+        fetchData(10);
+        setRefreshing(false)
+        }   
 
     const navigation = useNavigation();
     return (
@@ -42,6 +49,8 @@ export const LastMatch = () => {
                         />
                     </TouchableOpacity>
                 )}
+                 refreshing={refreshing}
+                onRefresh={handleRefresh}
             />
         </View>
     );
