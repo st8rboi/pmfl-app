@@ -40,17 +40,6 @@ const Tabs = () => {
                     color: 'white'
                 }
             }} />
-            <Tab.Screen name="Новости" component={News} options={{
-                tabBarIcon: () => (
-                    <View>
-                        <MaterialCommunityIcons name="newspaper-variant-outline" size={28} color="white" paddingTop={2}/>
-                    </View>
-                ),
-                headerTitleAlign: 'center',
-                tabBarLabelStyle: {
-                    color: 'white'
-                }
-            }} />
             <Tab.Screen name="Статистика" component={Stat} options={{
                 tabBarIcon: () => (
                     <View>
