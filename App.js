@@ -21,7 +21,7 @@ const App = () => {
         <NavigationContainer theme={theme}>
           <Tabs />
         </NavigationContainer>
-        <StatusBar style='light' />
+        <StatusBar style='default' />
       </PaperProvider>
     )
 }

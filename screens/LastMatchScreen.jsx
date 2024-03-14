@@ -43,8 +43,8 @@ export const LastMatch = () => {
                         <MatchItem
                             team_home={item.team_home}
                             team_away={item.team_away}
-                            score_home={item.score_home}
-                            score_away={item.score_away}
+                            score_home={item.goals_home.split(',').length}
+                            score_away={item.goals_away.split(',').length}
                             data={item.data}
                         />
                     </TouchableOpacity>
