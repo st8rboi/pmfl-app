@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     buttonbox: {
         flexDirection: 'row',
         justifyContent: 'center',
-        paddingTop: 10
+        paddingTop: 10,
     },
 
     image: {
