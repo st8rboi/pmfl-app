@@ -4,13 +4,12 @@ import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
 import styles from '../Styles';
-import axios from 'axios';
 
 export const LastMatch = () => {
     const [lastmatches, setLastMatches] = React.useState();
     const fetchData = async (limit = 10) => {
         const response = await fetch(
-            'https://65ba3f9fb4d53c0665526458.mockapi.io/lastmatches'
+            'https://65ba3f9fb4d53c0665526458.mockapi.io/matches'
         );
         const data = await response.json();
         setLastMatches(data)
@@ -33,25 +32,33 @@ export const LastMatch = () => {
                 <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='#171742'/>
 
             </View>
-            <FlatList
+<FlatList
                 data={lastmatches}
-                renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
-                        id: item.id,
-                        screen: lastmatches,
-                    })}>
-                        <MatchItem
-                            team_home={item.team_home}
-                            team_away={item.team_away}
-                            score_home={item.goals_home.split(',').length}
-                            score_away={item.goals_away.split(',').length}
-                            data={item.data}
-                        />
-                    </TouchableOpacity>
-                )}
-                 refreshing={refreshing}
+                renderItem={({ item }) => {
+                    if (item.lastnow == 0) {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
+                                id: item.id,
+                                matches: lastmatches
+                            })}>
+                                <MatchItem
+                                    key={item.id}
+                                    team_home={item.team_home}
+                                    team_away={item.team_away}
+                                    score_home={item.goals_home.split(',').length}
+                                    score_away={item.goals_away.split(',').length}
+                                    data={item.data}
+                                />
+                            </TouchableOpacity>
+                
+                        )
+                    } else {
+                        return null
+                    }
+                }}
+                refreshing={refreshing}
                 onRefresh={handleRefresh}
-            />
+                />
         </View>
     );
 }

@@ -4,7 +4,7 @@ import MatchItem from '../components/MatchItem';
 import { useNavigation } from '@react-navigation/native';
 import TopButton from '../components/Button';
 import styles from '../Styles';
-import axios from 'axios';
+
 
 export const Match = () => {
     const [matches, setMatches] = React.useState();
@@ -34,20 +34,27 @@ export const Match = () => {
             </View>
             <FlatList
                 data={matches}
-                renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
-                        id: item.id,
-                        screen: matches,
-                    })}>
-                        <MatchItem
-                            team_home={item.team_home}
-                            team_away={item.team_away}
-                            score_home={item.goals_home.split(',').length}
-                            score_away={item.goals_away.split(',').length}
-                            data={item.data}
-                        />
-                    </TouchableOpacity>
-                )}
+                renderItem={({ item }) => {
+                    if (item.lastnow == 1) {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
+                                id: item.id,
+                                matches: matches
+                            })}>
+                                <MatchItem
+                                    team_home={item.team_home}
+                                    team_away={item.team_away}
+                                    score_home={item.goals_home.split(',').length}
+                                    score_away={item.goals_away.split(',').length}
+                                    data={item.data}
+                                />
+                            </TouchableOpacity>
+                
+                        )
+                    } else {
+                        return null
+                    }
+                }}
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
                 />

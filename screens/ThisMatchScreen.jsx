@@ -4,8 +4,9 @@ import MatchItem from '../components/MatchItem'
 import GoalsItem from '../components/GoalsItem';
 import { WebView } from 'react-native-webview';
 
+
 export const ThisMatch = ({ route }) => {
-    const thisMatch = route.params.screen[route.params.id]
+    const thisMatch = route.params.matches[route.params.id]
   return (
     <View style={styles.container}>
         <MatchItem
@@ -25,7 +26,7 @@ export const ThisMatch = ({ route }) => {
                   <html>
                     <head></head> 
                     <body>
-                      <div id="baseDiv"><iframe src=${thisMatch.url} width="500" height="320" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+                      <div id="baseDiv"><iframe src="${thisMatch.url}" width="500" height="320" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
                     </body>
                   </html>
             `,
