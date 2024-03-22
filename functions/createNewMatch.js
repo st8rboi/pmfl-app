@@ -1,13 +1,13 @@
-export const createMatch = (team_home, team_away, data, goals_home, goals_away) => {
+export const createMatch = (team_home, team_away, data, url) => {
     const newMatch =   {
     team_home: team_home,
     team_away: team_away,
+    goals_home: "",
+    goals_away: "",
     data: data,
-    goals_home: goals_home,
-    goals_away: goals_away,
     lastnow: true,
-    url: "Shoes",
-    id: 9
+    url: url,
+    visible: "1"
   }
 
 fetch('https://65ba3f9fb4d53c0665526458.mockapi.io/matches', {

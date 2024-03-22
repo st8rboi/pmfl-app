@@ -31,6 +31,7 @@ export const chooseLogo = (team_name) => {
             team_logo = require('../assets/logos/Inside.png')
             break;
         default:
+            team_logo = require('../assets/logos/Inside.png')
             break;
     }
     return team_logo

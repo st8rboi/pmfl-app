@@ -35,7 +35,7 @@ export const LastMatch = () => {
 <FlatList
                 data={lastmatches}
                 renderItem={({ item }) => {
-                    if (item.lastnow == 0) {
+                    if (item.lastnow == 0 && item.visible == "1") {
                         return (
                             <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
                                 id: item.id,
@@ -45,8 +45,8 @@ export const LastMatch = () => {
                                     key={item.id}
                                     team_home={item.team_home}
                                     team_away={item.team_away}
-                                    score_home={item.goals_home.split(',').length}
-                                    score_away={item.goals_away.split(',').length}
+                                    score_home={item.goals_home.split(',').length-1}
+                                    score_away={item.goals_away.split(',').length-1}
                                     data={item.data}
                                 />
                             </TouchableOpacity>

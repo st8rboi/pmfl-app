@@ -1,12 +1,15 @@
-import React from 'react';
-import { View, TouchableOpacity, FlatList } from 'react-native';
-import MatchItem from '../components/MatchItem';
-import { useNavigation } from '@react-navigation/native';
-import TopButton from '../components/Button';
-import styles from '../Styles';
+import React from "react";
+import { View, FlatList, TouchableOpacity } from "react-native";
+import styles from "../Styles";
+import TopButton from "../components/Button";
+import { useNavigation } from "@react-navigation/native";
+import MatchItem from "../components/MatchItem";
 
-
-export const Match = () => {
+export const Manage = () => {
+    const [team_home, onChangeTH] = React.useState('');
+    const [team_away, onChangeTA] = React.useState('');
+    const [data, onChangeData] = React.useState('');
+    const [url, onChangeUrl] = React.useState('');
     const [matches, setMatches] = React.useState();
     const fetchData = async (limit = 10) => {
         const response = await fetch(
@@ -27,18 +30,16 @@ export const Match = () => {
 
     const navigation = useNavigation();
     return (
-        <View>  
+        <View>
             <View style={styles.buttonbox}>
-                <TopButton title='Ближайшие' onPress={() => navigation.navigate('ближайшие')} color='#171742' />
-                <TopButton title='Прошедшие' onPress={() => navigation.navigate('прошлые')} color='black'/>
+                <TopButton title='Создание' onPress={() => navigation.navigate('создание')} color='black'/>
+                <TopButton title='Управление' onPress={() => navigation.navigate('управление')} color='red' />
             </View>
-            <FlatList
+                <FlatList
                 data={matches}
                 renderItem={({ item }) => {
-                    if (item.lastnow == 1 && item.visible == 1) {
-                        console.log(item.id)
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
+                            <TouchableOpacity onPress={() => navigation.navigate('управление_матчем', {
                                 id: item.id,
                                 matches: matches
                             })}>
@@ -52,16 +53,11 @@ export const Match = () => {
                             </TouchableOpacity>
                 
                         )
-                    } else {
-                        return null
-                    }
-                }}
+                    } 
+                }
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
-                />
-            </View>
-            
-    );
+                    />
+        </View>
+    )
 }
-
-
