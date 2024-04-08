@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, StyleSheet} from 'react-native';
+import { View, StyleSheet, FlatList} from 'react-native';
 import MatchItem from '../components/MatchItem'
 import GoalsItem from '../components/GoalsItem';
 import { WebView } from 'react-native-webview';
+import { useNavigation } from '@react-navigation/native';
+import TopButton from '../components/Button';
+import { TouchableOpacity } from 'react-native';
 
 
 export const ThisMatch = ({ route }) => {

@@ -15,9 +15,18 @@ export const Match = () => {
         const data = await response.json();
         setMatches(data)
     }
+    const autoRefresh = () => {
+        setInterval(() => {
+        fetchData();
+        }, 5000); // Обновление данных каждые 5 секунд (можно настроить интервал по необходимости)
+    }
+
     React.useEffect(() => {
         fetchData();
+        autoRefresh()
     }, [])
+
+
     const [refreshing, setRefreshing] = React.useState(false);
     const handleRefresh = () => {
         setRefreshing(true);
@@ -36,13 +45,13 @@ export const Match = () => {
                 data={matches}
                 renderItem={({ item }) => {
                     if (item.lastnow == 1 && item.visible == 1) {
-                        console.log(item.id)
                         return (
                             <TouchableOpacity onPress={() => navigation.navigate('thismatch', {
                                 id: item.id,
                                 matches: matches
                             })}>
                                 <MatchItem
+                                    key = {item.id}
                                     team_home={item.team_home}
                                     team_away={item.team_away}
                                     score_home={(item.goals_home == '')?(item.goals_home.split(',').length-1):(item.goals_home.split(',').length)}
@@ -58,7 +67,7 @@ export const Match = () => {
                 }}
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
-                />
+            />
             </View>
             
     );

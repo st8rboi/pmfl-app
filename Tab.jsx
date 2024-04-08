@@ -4,10 +4,10 @@ import { ImageBackground, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { News } from './screens/NewsScreen'
-import { Stat } from './screens/StatScreen'
 import { Info } from './screens/InfoScreen'
 import { Stacks } from "./Stack";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {Test} from './Test'
+
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ const Tabs = () => {
                     color: 'white'
                 }
             }} />
-            <Tab.Screen name="Статистика" component={Stat} options={{
+            <Tab.Screen name="Статистика" component={Test} options={{
                 tabBarIcon: () => (
                     <View>
                         <Ionicons name="stats-chart" size={25} color="white" paddingTop={4} />

@@ -42,11 +42,11 @@ export const LastMatch = () => {
                                 matches: lastmatches
                             })}>
                                 <MatchItem
-                                    key={item.id}
+                                    key = {item.id}
                                     team_home={item.team_home}
                                     team_away={item.team_away}
-                                    score_home={item.goals_home.split(',').length-1}
-                                    score_away={item.goals_away.split(',').length-1}
+                                    score_home={(item.goals_home == '')?(item.goals_home.split(',').length-1):(item.goals_home.split(',').length)}
+                                    score_away={(item.goals_away == '')?(item.goals_away.split(',').length-1):(item.goals_away.split(',').length)}
                                     data={item.data}
                                 />
                             </TouchableOpacity>

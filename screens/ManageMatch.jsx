@@ -5,11 +5,8 @@ import TopButton from "../components/Button";
 import { useNavigation } from "@react-navigation/native";
 import MatchItem from "../components/MatchItem";
 
+
 export const Manage = () => {
-    const [team_home, onChangeTH] = React.useState('');
-    const [team_away, onChangeTA] = React.useState('');
-    const [data, onChangeData] = React.useState('');
-    const [url, onChangeUrl] = React.useState('');
     const [matches, setMatches] = React.useState();
     const fetchData = async (limit = 10) => {
         const response = await fetch(
@@ -17,9 +14,17 @@ export const Manage = () => {
         );
         const data = await response.json();
         setMatches(data)
+        return data
     }
+    const autoRefresh = () => {
+        setInterval(() => {
+        fetchData();
+        }, 5000); // Обновление данных каждые 5 секунд (можно настроить интервал по необходимости)
+    }
+
     React.useEffect(() => {
         fetchData();
+        autoRefresh()
     }, [])
     const [refreshing, setRefreshing] = React.useState(false);
     const handleRefresh = () => {
@@ -57,7 +62,7 @@ export const Manage = () => {
                 }
                 refreshing={refreshing}
                 onRefresh={handleRefresh}
-                    />
+            />
         </View>
     )
 }

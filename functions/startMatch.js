@@ -15,7 +15,7 @@ export const startMatch = (id, data) => {
         }).then(task => {
             // Do something with updated task
         }).catch(error => {
-            // handle error
+            console.log(error)
         })
         alert('Матч закончен')
     }
